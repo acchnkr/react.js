@@ -7,9 +7,9 @@ class Main extends Component {
     //return [<p>Hola mundo class 1</p>, <p>Hola mundo class 2</p>];
     //document.createDocumentFragment();
     return (
-      <Fragment>
+      <main>
         <h2>Esto es el Main</h2>
-      </Fragment>
+      </main>
     );
   }
 }

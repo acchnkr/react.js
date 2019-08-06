@@ -6,17 +6,16 @@ class Header extends Component {
     //return <div><p>Hola mundo class 1</p>, <p>Hola mundo class 2</p></div>;
     //return [<p>Hola mundo class 1</p>, <p>Hola mundo class 2</p>];
     //document.createDocumentFragment();
+
     return (
-      <Fragment>
-        <div>
-          <h1>Esto es el header</h1>
-          <nav>
-            <a href="#asdf">link_1</a> &nbsp;
-            <a href="#asdf">link_2</a> &nbsp;
-            <a href="#asdf">link_3</a> &nbsp;
-          </nav>
-        </div>
-      </Fragment>
+      <header>
+        <h1>Esto es el header</h1>
+        <nav>
+          {this.props.links.map(e => {
+            return <a href={e}> {e} </a>;
+          })}
+        </nav>
+      </header>
     );
   }
 }

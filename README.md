@@ -25,6 +25,12 @@ npm start
 Componente, empiezan con mayuscula, compila a un nodo para eso siempre tiene que estar la variable React en scope,
 todos los componentes deben retornar algo, y pueden ser uno de los siguientes tipos: un string, otro componente o una etiqueta HTML (no en forma de string). funcion
 
+Plugin para Visual Studio Code:
+https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
+
+Para abreviar en react, asociar al tipo de archivo en VSC:
+https://docs.emmet.io/cheat-sheet/
+
 function App() {}
 
 let App = () => {}
@@ -41,3 +47,46 @@ src/
 \_Main.js
 \_paginas/
 \_widgets/
+
+Un componente de tipo class puede mantener su propio estado (state),
+y cualquier componente puede recibir paràmetros desde otro componente (props). Los dos son de solo lectura. Se puede cambiar el estado de un compo, pero no por asignacion de variable, es decir:
+
+let state = 1;
+state = 2; // No se puede
+
+Los props son obligatoriamente de solo lectura, nunca se pueden modificar.
+El state de un compo solo puede ser modificado por ese mismo compo, y nadie mas lo puede cambiar.
+Si el state o los props cambian, en cualquier momento, la funcion render del compo (o en su defecto, su return) se tiene que volver a ejecutar. Los props y state solo pueden ser pasados de padre a hijo, no entre hermanos, sin saltear jerarquias.
+
+Patron redux (suscripcion).
+
+props:
+function foo(1) {}
+foo(1) === <foo a=1 />
+
+Los props que le pasamos a un compo pueden valer 3 cosas: string/boolean(default)/expresion de javascript:
+<foo a /> // por defecto es true
+<foo a="hola mundo" />
+<foo a={1} /> // una expresion javascript siempre va entre llaves
+
+---
+
+Consola de react:
+React developer tools
+
+Array.map() => Array - retorna un array de la misma longitud del array saliente.
+
+Array.map((e, i, arr)=>{
+return ;
+});
+
+## Array.filter() => Array - retorna un array de igual o menor longitud del array saliente.
+
+{...this.state} pasa cada objeto dentro de state por separado, en los parametros
+
+Modificar el state : Se usa una function asincronica que sale de this
+de dos formas:
+
+this.setState(()=>{})
+
+this.setState({contador : this.state.contador + 1})

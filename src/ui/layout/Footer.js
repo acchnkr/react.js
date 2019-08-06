@@ -9,7 +9,7 @@ class Footer extends Component {
     return (
       <Fragment>
         <b>
-          <p>Esto es el footer</p>
+          <p> &copy; Esto es el footer</p>
         </b>
       </Fragment>
     );
