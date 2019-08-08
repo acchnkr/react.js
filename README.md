@@ -90,3 +90,53 @@ de dos formas:
 this.setState(()=>{})
 
 this.setState({contador : this.state.contador + 1})
+
+------------------------------------------------
+
+para redefinir el contexto en js
+//en js 5 formas de llamar una funcion
+ * bind apply call new
+
+funcion()
+funcion.call(contexto o this, param1, param2)
+funcion.apply(contexto o this, [param1, param2]) // los parametros van en forma de array
+
+// new : crea un objeto nuevo y vacìo, y ejecuta la funcion que tenga al lado pero le redefine el contexto con ese objeto que acaba de crear. Cuando termina la ejecuciòn, retorna el mismo objeto.
+
+function persona() {
+	
+}
+let nuevo = {}
+persona.call(nuevo)
+return nuevo
+
+new persona()
+------------------------------
+retorna la referencia pero sin ejecutar
+let asd = funcion.bind("bind", param1, param2)
+
+asd()
+
+
+--------------------------------
+
+ {TRUE/!FALSE} o {FALSE/null/undefined/0/""}
+
+ Array.isArray(Any) => Boolean // chequear si es array
+
+ ------------------
+
+ typeof ""		"string"
+ typeof 1	"number"
+ typeof true	"boolean"
+ typeof undefined	"undefined"
+ typeof null	"object" // bug
+ typeof {}	"object"
+ typeof []	"object"
+ 
+ Prototype.isPrototypeOf(instancia) => boolean
+
+------------------------------------------------
+repos varios:
+https://github.com/HoracioGutierrez
+
