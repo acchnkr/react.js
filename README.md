@@ -140,3 +140,7 @@ asd()
 repos varios:
 https://github.com/HoracioGutierrez
 
+Sobre la cursada:
+https://github.com/HoracioGutierrez/accenture-react
+
+
