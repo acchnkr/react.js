@@ -7,9 +7,9 @@ class Formulario extends Component {
     //return [<p>Hola mundo class 1</p>, <p>Hola mundo class 2</p>];
     //document.createDocumentFragment();
     return (
-      <form>
+      <form onSubmit={this.props.handleSubmit}>
         <div>
-          <input type="text" placeholder="Usuario" />
+          <input value={this.props.usuario} onChange={this.props.handleChange} type="text" placeholder="Usuario" />
         </div>
         <button>Enviar</button>
       </form>

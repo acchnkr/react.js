@@ -144,3 +144,18 @@ Sobre la cursada:
 https://github.com/HoracioGutierrez/accenture-react
 
 
+operador REST/SPREAD + destructuring:
+Forma en la que se puede sacar el valor de algo, fuera de ese algo.
+
+let obj = {x:1, y:2}
+obj.x
+
+forma tradicional:
+let x = obj.x
+let y = obj.y
+
+forma nueva:
+let {x:equis, y:epsilon} = obj
+let {x,y,z} = obj // object shorthand
+
+
