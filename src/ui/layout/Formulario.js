@@ -11,7 +11,8 @@ class Formulario extends Component {
         <div>
           <input value={this.props.usuario} onChange={this.props.handleChange} type="text" placeholder="Usuario" />
         </div>
-        <button>Enviar</button>
+        <button>Enviar</button> &nbsp;
+        <button onClick={this.props.borrar}>Borrar</button>
       </form>
     )
   }

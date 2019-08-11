@@ -11,8 +11,8 @@ class Header extends Component {
       <header>
         <h1>Esto es el header</h1>
         <nav>
-          {this.props.links.map(e => {
-            return <a href={e}> {e} </a>;
+          {this.props.links.map((e,i) => {
+            return <a key={i} href={e}> {e} </a>;
           })}
         </nav>
       </header>
