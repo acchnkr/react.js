@@ -157,5 +157,52 @@ let y = obj.y
 forma nueva:
 let {x:equis, y:epsilon} = obj
 let {x,y,z} = obj // object shorthand
+·························
+Redux
 
+state === store
+El store es un objeto anàlogo al state de un componente que nos sirve para mantener el estado de la app. Se crea ejecutando una funcion llamada createStore
 
+let store = createStore(reducer)
+
+* Reducer:
+
+Es una funcion pura (retorna una salida sin modificar los parametros de entrada),
+que toma como parametros el estado anterio o inicial y una accion, y retorna el nuevo estado de la aplicacion.
+
+let state = { contador : 0 }
+
+let reducer = (state, action) => {
+    switch(action) {
+        case "CONTADOR_AUMENTAR":
+            return { contador : state.contador + 1 }
+        case "CONTADOR_DISMINUIR":
+            return { contador : state.contador - 1 }
+        case "CONTADOR_RESETEAR":
+            return { contador : 0 }
+        default:
+            return state
+    }
+}
+
+* Action:
+
+Es una funcion pura, que por defaul solo puede tener codigo sincronico y tiene que retornar algo de inmediato. Lo que sea que se retorne de un action, va a parar automaticamente al segundo parametro de un reducer.
+
+let MiAccion = () => {
+    // lo que sea MENOS cosas asincronicas
+    return "CONTADOR_AUMENTAR"
+}
+
+IMPLEMENTACION DE REDUX:
+
+Redux DevTools instalar
+
+1) Crear un store. Para esto necesito la funcion createStore de "redux"
+    npm i -S redux react-redux
+
+2) Crear un reducer. Para esto no necesito nada, solo una funcion con dos parametros, un switch y como minimo un retorno.
+
+3) Integrar el store creado con un componente reac. Para esto necesito uun componente llamado provide de "react-redux". El provider me sirve para decirle a un componente: "vos y todos tus componentes hijos pueden acceder al store sin tener que pasarse cadenas de props".
+
+4) Conectar un componente con el store. Para este se necesita la funcion HoC connect de "react-redux" la cual toma dos parametros : una funcion que recibe el store y otra funcion que recibe los actions; el retorno de ambas son los props que recibe...

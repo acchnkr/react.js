@@ -3,6 +3,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import Header from "./Header";
 import Formulario from "./Formulario";
+import ListadoUsuarios from "../widgets/ListadoUsuarios";
 
 //export default class App extends Component {
 class App extends Component {
@@ -123,21 +124,14 @@ class App extends Component {
           handleChange={this.handleChange}
           usuario={usuario}
           borrar={this.handleDelete}
+          usuarios={usuarios}
         />
           : null}
         <br></br>
 
         <hr />
-        <ul ref = { this.lista }>
-          {!usuarios.length
-            ? <li key={0}>No hay usuarios</li>
-            : usuarios.map((e, i) => {
-              return (
-                <li onClick={this.select} style={{backgroundColor: 'white', color: 'black'}} id={i} key={i}>{e}</li>
-              )
-            })
-          }
-        </ul>
+        <ListadoUsuarios usuarios={usuarios} />
+        
         <Main />
         <Footer />
       </Fragment>

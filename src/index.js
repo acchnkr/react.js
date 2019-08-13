@@ -3,6 +3,9 @@ import React from "react"; //ES6
 
 import ReactDOM from "react-dom";
 import App from "../src/ui/layout/App";
+import {Provider} from "react-redux"
+import store from "./api/store"
+
 //let App = () => <p>asdf</p>;
 
 /*let App = () => {
@@ -12,6 +15,8 @@ import App from "../src/ui/layout/App";
 //class App extends React.Component {
 
 ReactDOM.render(
-  <App />, // App()  ---jsx
+  <Provider sore={store}>
+    <App />, // App()  ---jsx
+  </Provider>,
   document.getElementById("root")
 );
